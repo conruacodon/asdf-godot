@@ -3,7 +3,7 @@
 set -euo pipefail
 
 GH_REPO="https://github.com/godotengine/godot"
-REPO="https://downloads.tuxfamily.org/godotengine"
+REPO="https://github.com/godotengine/godot/releases/download/"
 TOOL_NAME="godot"
 TOOL_TEST="godot --version"
 
@@ -34,7 +34,7 @@ download_release() {
   version="$1"
   filename="$2"
 
-  url="$REPO/${version}/Godot_v${version}-stable_macos.universal.zip"
+  url="$REPO/${version}-stable/Godot_v${version}-stable_macos.universal.zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
