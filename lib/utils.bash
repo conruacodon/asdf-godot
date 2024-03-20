@@ -56,7 +56,7 @@ install_version() {
     echo "$release_file" "$install_path"
     unzip -qq "$release_file" -d "$install_path" || fail "Could not extract $release_file"
     mv "$install_path/Godot_v${version}-stable_macos.universal" "$install_path/bin/godot"
-    rm "$release_file"
+    # rm "$release_file"
 
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
