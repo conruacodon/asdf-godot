@@ -34,7 +34,7 @@ download_release() {
   version="$1"
   filename="$2"
 
-  url="$REPO/${version}/Godot_v${version}-stable_x11.64.zip"
+  url="$REPO/${version}/Godot_v${version}-stable_macos.universal.zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -54,7 +54,7 @@ install_version() {
     mkdir -p "$install_path/bin"
     download_release "$version" "$release_file"
     unzip -qq "$release_file" -d "$install_path" || fail "Could not extract $release_file"
-    mv "$install_path/Godot_v${version}-stable_x11.64" "$install_path/bin/godot"
+    mv "$install_path/Godot_v${version}-stable_macos.universal" "$install_path/bin/godot"
     rm "$release_file"
 
     local tool_cmd
