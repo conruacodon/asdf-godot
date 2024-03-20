@@ -36,7 +36,7 @@ download_release() {
 
   url="$REPO/${version}-stable/Godot_v${version}-stable_macos.universal.zip"
 
-  echo "* Downloading $TOOL_NAME release $version..."
+  echo "* Downloading $TOOL_NAME release $version... pwd/$filename"
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
